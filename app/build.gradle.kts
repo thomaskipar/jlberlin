@@ -1,6 +1,5 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.google.gms.googleservices)
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
@@ -13,12 +12,12 @@ secrets {
 
 android {
     namespace = "de.justkile.jlberlin"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "de.justkile.jlberlin"
         minSdk = 29
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -35,11 +34,13 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
+    kotlin {
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
+        }
     }
     buildFeatures {
         compose = true
@@ -57,14 +58,15 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.compose.material.icons.extended)
     implementation(libs.androidx.material3.adaptive.navigation.suite)
     implementation(libs.maps.compose)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.runtime.livedata)
     implementation(libs.androidx.material3.adaptive.navigation.suite.android)
     implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.firestore.ktx)
     implementation(libs.firebase.analytics)
+    implementation(libs.firebase.firestore)
 
     implementation(project(":JLBerlinModel"))
 

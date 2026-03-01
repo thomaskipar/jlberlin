@@ -12,9 +12,10 @@
 
 ## Build App
 
-1. Place your 'google-services.json' from your firebase console to 'app/google-services.json'
-2. Create file 'secrets.properties' and put your Google maps API key
-```
-MAPS_API_KEY=<YOUR_GOOGLE_MAPS_API_KEY>
-```
+1. Place your 'google-services.json' from your firebase console to '~/app/google-services.json'
+2. Create file 'secrets.properties' to '~/secrets.properties' and put your Google maps API key
+   ```
+   MAPS_API_KEY=<YOUR_GOOGLE_MAPS_API_KEY>
+   ```
+3. Build the app :-)
 
