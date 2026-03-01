@@ -3,12 +3,12 @@
 ## Prerequisits
 
 1. Firebase -> https://console.firebase.google.com/
-..* Create a project
-..* Create Firestore database
-..* Download your google-services.json
+   * Create a project
+   * Create Firestore database
+   * Download your google-services.json
 2. Google Maps -> https://console.cloud.google.com/
-..* Create a project
-..* Create Google Maps API Key
+   * Create a project
+   * Create Google Maps API Key
 
 ## Build App
 
